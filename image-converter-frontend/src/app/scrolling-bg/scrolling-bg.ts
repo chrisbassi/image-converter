@@ -4,8 +4,11 @@ import {
   ViewChild,
   AfterViewInit,
   OnDestroy,
-  NgZone
+  NgZone,
+  PLATFORM_ID,
+  inject
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-scrolling-bg',
@@ -17,6 +20,7 @@ export class ScrollingBg implements AfterViewInit, OnDestroy {
 
   @ViewChild('scrollingBg', { static: true }) bgRef!: ElementRef<HTMLDivElement>;
 
+  private platformId = inject(PLATFORM_ID);
   private xPos = 0;
   private yPos = 0;
   private animationId!: number;
@@ -25,6 +29,8 @@ export class ScrollingBg implements AfterViewInit, OnDestroy {
   constructor(private ngZone: NgZone) {}
 
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     this.ngZone.runOutsideAngular(() => {
       this.running = true;
       this.scrollBackground();
@@ -33,7 +39,7 @@ export class ScrollingBg implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.running = false;
-    if (this.animationId) {
+    if (this.animationId && isPlatformBrowser(this.platformId)) {
       cancelAnimationFrame(this.animationId);
     }
   }

@@ -84,7 +84,7 @@ body.darkmode .uploader .attachmentType p{
   height: 44px;
   width: 44px;
   left: 10px;
-  background: url("/assets/icons/upload_file_FILL.svg");
+  background: url("assets/icons/upload_file_FILL.svg");
   background-size: 44px;
   background-repeat: no-repeat;
   background-position: center;
@@ -123,7 +123,7 @@ body.darkmode .uploader .attachmentType.notFound p{
 }
 .uploader .attachmentType.notFound .imageIcon{
   border: none;
-  background: url("/assets/icons/unknown_document.svg");
+  background: url("assets/icons/unknown_document.svg");
   background-size: 44px;
   background-repeat: no-repeat;
   background-position: center;
@@ -150,7 +150,7 @@ body.darkmode .uploader .attachmentType.video {
   background-color: #1F3432;
 }
 .uploader .attachmentType.video::after {
-  background-image: url("/assets/icons/play_circle.svg");
+  background-image: url("assets/icons/play_circle.svg");
   filter: invert(57%) sepia(10%) saturate(3112%) hue-rotate(78deg) brightness(101%) contrast(66%);
 }
 .uploader .attachmentType.file {
@@ -160,7 +160,7 @@ body.darkmode .uploader .attachmentType.file {
   background-color: #26313b;
 }
 .uploader .attachmentType.file::after {
-  background-image: url("/assets/icons/file_present.svg");
+  background-image: url("assets/icons/file_present.svg");
   filter: invert(29%) sepia(5%) saturate(6630%) hue-rotate(169deg) brightness(66%) contrast(73%);
 }
 body.darkmode .uploader .attachmentType.file::after {
@@ -173,7 +173,7 @@ body.darkmode .uploader .attachmentType.certificado {
   background-color: #253349;
 }
 .uploader .attachmentType.certificado::after {
-  background-image: url("/assets/icons/verified.svg");
+  background-image: url("assets/icons/verified.svg");
   filter: invert(29%) sepia(5%) saturate(6630%) hue-rotate(169deg) brightness(66%) contrast(73%);
 }
 body.darkmode .uploader .attachmentType.certificado::after {
@@ -186,7 +186,7 @@ body.darkmode .uploader .attachmentType.pdf {
   background-color: #2F242D;
 }
 .uploader .attachmentType.pdf::after {
-  background-image: url("/assets/icons/picture_as_pdf_FILL.svg");
+  background-image: url("assets/icons/picture_as_pdf_FILL.svg");
   filter: invert(18%) sepia(81%) saturate(2373%) hue-rotate(344deg) brightness(108%) contrast(94%);
 }
 body.darkmode .uploader .attachmentType.pdf::after {
@@ -199,7 +199,7 @@ body.darkmode .uploader .attachmentType.CDR {
   background-color: #1F3431;
 }
 .uploader .attachmentType.CDR::after {
-  background-image: url("/assets/icons/file_cdr.svg");
+  background-image: url("assets/icons/file_cdr.svg");
   filter: invert(48%) sepia(10%) saturate(2641%) hue-rotate(73deg) brightness(111%) contrast(83%);
 }
 .uploader .attachmentType.AI {
@@ -209,7 +209,7 @@ body.darkmode .uploader .attachmentType.AI {
   background-color: #2F2F2B;
 }
 .uploader .attachmentType.AI::after {
-  background-image: url("/assets/icons/file_ai.svg");
+  background-image: url("assets/icons/file_ai.svg");
   filter: invert(52%) sepia(27%) saturate(1360%) hue-rotate(356deg) brightness(97%) contrast(88%);
 }
 .uploader .attachmentType p{
@@ -301,7 +301,7 @@ body.darkmode .uploader .imgContainer:hover {
   background-color: #4d4d4d;
   background-color: #fff;
   transition: width 200ms, height 200ms, opacity 200ms !important;
-  background: url('/assets/icons/unknown_document.svg') no-repeat;
+  background: url('assets/icons/unknown_document.svg') no-repeat;
   background-size: cover;
   background-position: center;
   opacity: 1;

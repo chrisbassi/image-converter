@@ -106,7 +106,7 @@
   right: 8px;
   height: 24px;
   width: 24px;
-  background-image: url('/assets/icons/keyboard_arrow_down.svg');
+  background-image: url('assets/icons/keyboard_arrow_down.svg');
   background-color: var(--box-input-bg-light);
   background-size: contain;
   opacity: 0.85;
