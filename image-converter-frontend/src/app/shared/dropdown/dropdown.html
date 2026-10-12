@@ -1,0 +1,60 @@
+<select
+  [id]="selectId"
+  class="form-item"
+  [ngClass]="classList"
+  [ngStyle]="selectStyles"
+  [disabled]="disabled"
+  [attr.name]="isMultiValue ? null : name"
+  [appDynamicAttrs]="data"
+  (change)="onSelectChange($event)"
+>
+  @if (hasMismatch) {
+    <option>
+      Número de variáveis desiguais: {{ values.length }} e {{ texts.length }}.
+    </option>
+  } @else if (values.length === 0) {
+    <option [value]="selectedValue ?? ''" selected>{{ selectedValue }}</option>
+  } @else {
+    <option value="">Selecionar</option>
+    @for (value of values; track $index) {
+      <option [value]="value" [selected]="value === selectedValue">
+        {{ texts[$index] }}
+      </option>
+    }
+  }
+</select>
+
+@if (icon) {
+  <div class="dropdownIcon" [style.background]="iconBackground"></div>
+}
+
+<label
+  [attr.for]="selectId"
+  [class.centered]="centered"
+  [ngStyle]="labelStyles"
+>
+  {{ label }}
+</label>
+
+@if (isMultiValue) {
+  <div class="options">
+    <button
+      type="button"
+      class="tiny addValueBtn"
+      [id]="'addValueBtn_' + multiValue"
+      data-tooltip="Adicionar"
+      (click)="onAddValue()"
+    >
+      <img [src]="root + iconsPath + '/add_circle.svg'" alt="Adicionar" />
+    </button>
+</div>
+
+  <ul class="valueList" [id]="'valueList_' + multiValue"></ul>
+
+  <input
+    type="hidden"
+    [id]="'hiddenInput_' + multiValue"
+    [name]="name"
+    [value]="selectedValue ?? ''"
+  />
+}

@@ -1,0 +1,561 @@
+/* ------------------------------------------------------------------------------------------ */
+/* Buttons ---------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------ */
+
+.rotate {
+  animation: rotateTwice 1s cubic-bezier(0.55, 0.1, 0.55, 0.9);
+}
+
+@keyframes rotateTwice {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+div[data-toggle="modal"] {
+  cursor: pointer;
+}
+button {
+  position: relative;
+  display: flex;
+  width: auto;
+  color: white;
+  background-color: var(--button-bg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 6px 6px 0px rgba(88, 129, 137, 0.04);
+  transition: transform 0.5s cubic-bezier(0.55, 0.1, 0.55, 0.9), border-radius 20ms;
+  padding: 16px 24px;
+  border-radius: var(--default-secondary-border-radius);
+  font-family: "Marvel", system-ui, sans-serif;
+  flex-shrink: 0;
+  font-size: 20px;
+  align-items: center;
+  align-self: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  grid-column: 1 / span 2;
+  cursor: pointer;
+  fill: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  user-select: none;
+  gap: 8px;
+}
+button.label{
+  justify-content: space-between;
+  background-color: transparent !important;
+  width: 100%;
+  height: fit-content;
+  padding: 0 !important;
+  border: none !important;
+}
+button.label .item{
+  width: 100% !important;
+}
+button:active {
+  scale: 0.98;
+  border-radius: 8px;
+}
+body.darkmode button{
+  background-color: var(--dm-button-bg);
+  color: #fff;
+  box-shadow: none;
+}
+body.darkmode button:hover{
+  background-color: var(--dm-button-hover-bg);
+}
+button:hover {
+  background-color: var(--button-hover-bg);
+  text-decoration: none !important;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.04);
+}
+button img {
+  width: 24px;
+  filter: invert(1);
+  opacity: 0.64;
+  pointer-events: none !important;
+  flex-shrink: 0;
+}
+body.darkmode button img{
+  opacity: 1;
+}
+button .counter{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  height: 22px;
+  right: 10px;
+  min-width: 22px;
+  padding: 0px 4px;
+  color: #1c1c1c !important;
+  background-color: limegreen;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  z-index: 2;
+}
+body.darkmode button .counter{
+  background-color: #56e370;
+  border: 2px solid var(--box-bg);
+}
+button.active .counter{
+  border: 2px solid #E5F0FF
+}
+body.darkmode button.active .counter{
+  border: 2px solid var(--dm-button-bg);
+  font-weight: 500;
+}
+button.btnArrow .counter{
+  right: calc(24px + 10px + 10px);
+}
+button.btnArrow{
+  position: relative;
+}
+button.btnArrow::after{
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  right: 0;
+  content: '';
+  background: url('/assets/icons/chevron_right.svg') no-repeat;
+  box-sizing: content-box;
+  padding-right: 6px;
+  opacity: 0.72;
+  filter: invert(1);
+}
+.arrow_left,
+.arrow_right{
+  filter: invert(27%) sepia(52%) saturate(644%) hue-rotate(169deg) brightness(93%) contrast(90%) !important;
+  opacity: 0.24;
+}
+button.icon{
+  justify-content: center;
+  padding: 0 !important;
+  background-image: none !important;
+}
+
+button.icon .counter{
+  right: 1px;
+}
+
+button.icon .btnContent{
+  font-weight: 500;
+  justify-content: center;
+}
+button.btn_transparent{
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+body.darkmode button.btn_transparent,
+body.darkmode button.btn_transparent:hover{
+  background-color: transparent;
+}
+button.tiny{
+  height: 24px;
+  width: fit-content;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0px !important;
+  border: none;
+  color: #444444;
+}
+button.tiny:hover{
+  text-decoration: underline !important;
+  color: #282828;
+}
+body.darkmode button.tiny{
+  background-color: transparent;
+  color: #fff;
+  opacity: 0.64;
+}
+body.darkmode button.tiny:hover {
+  text-decoration: underline !important;
+  opacity: 1;
+}
+button.tiny img{
+  filter: invert(26%) sepia(55%) saturate(0%) hue-rotate(259deg) brightness(76%) contrast(83%);
+}
+body.darkmode button.tiny img{
+  filter: invert(1);
+}
+button.tiny{
+  background-color: transparent !important;
+}
+button.whatsapp{
+  background-color: #5ab96a !important;
+}
+button.whatsapp img{
+  filter: invert(89%) sepia(23%) saturate(117%) hue-rotate(95deg) brightness(103%) contrast(107%);
+}
+
+body.darkmode button.whatsapp{
+  background-color: #5ab96a !important;
+}
+body.darkmode button.whatsapp img{
+  filter: invert(1);
+}
+button.blue_gray{
+  background-color: #9EAFC6;
+}
+button.small{
+  height: 32px;
+  width: fit-content;
+  background-color: var(--button-small-light-bg);
+  box-shadow: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0px 14px;
+  border: none;
+  color: var(--button-small-light-text);
+}
+button.small .btnContent{
+  font-weight: 500;
+}
+button.small img{
+  height: 20px;
+  width: 20px;
+  filter: var(--button-small-img-filter);
+}
+button.small:hover{
+  background-color: var(--button-small-hover-bg);
+}
+body.darkmode button.small{
+  color: #fff;
+  background-color: var(--dm-button-small-bg);
+}
+body.darkmode button.small:hover{
+  background-color: var(--dm-button-small-hover-bg);
+}
+body.darkmode button.small img{
+  filter: invert(1);
+}
+button:hover{
+  text-decoration: underline;
+}
+button:disabled{
+  cursor: not-allowed;
+}
+button.back {
+  border: 1px solid #839ac6;
+  background-color: #c9d3e6;
+  padding: 0 12px 0 28px;
+}
+button.back::after{
+  position: absolute;
+  content: '';
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  background-image: url('/assets/icons/chevron_left.svg');
+  background-repeat: no-repeat;
+  opacity: 0.64;
+}
+body.darkmode button.back::after{
+  filter: invert(1);
+}
+body.darkmode button.back{
+  background-color: #293345;
+  border: 1px solid rgba(255,255,255,0.24);
+  opacity: 0.90;
+}
+button.back .btnContent{
+  color: rgba(0,0,0,0.64);
+}
+body.darkmode button.back .btnContent{
+  color: #fff;
+}
+button.error{
+  background-color: #C65959 !important;
+}
+body.darkmode button.error{
+  background-color: #C65959 !important;
+}
+button.error img{
+  filter: invert(1);
+}
+button.error::after{
+  content: '';
+  background: none;
+}
+button.small.warning{
+  background-color: #d78b6066 !important;
+}
+button.small.warning .btnContent{
+  color: #763e1e;
+}
+button.small.warning:hover{
+  background-color: #ffb185 !important;
+}
+button.small.warning img{
+  filter: brightness(0) saturate(100%) invert(24%) sepia(76%) saturate(536%) hue-rotate(338deg) brightness(91%) contrast(89%) !important;
+}
+body.darkmode button.warning img{
+  filter: invert(1) !important;
+}
+body.darkmode button.small.warning{
+  background-color: #d78b60cf !important;
+}
+body.darkmode button.small.warning .btnContent{
+  color: #fff;
+}
+button.warning{
+  background-color: #D78B60 !important;
+}
+button.warning:hover{
+  background-color: #ca7c4e !important;
+}
+body.darkmode button.warning{
+  background-color: #D78B60 !important;
+}
+body.darkmode button.warning:hover{
+  background-color: #ed9867 !important;
+}
+button.small.success {
+  background-color: #a8d3c2 !important;
+}
+button.small.success .btnContent {
+  color: #2e5043;
+}
+button.small.success img{
+  filter: brightness(0) saturate(100%) invert(24%) sepia(50%) saturate(344%) hue-rotate(105deg) brightness(94%) contrast(87%) !important;
+}
+
+body.darkmode button.small.success {
+  background-color: #518E76 !important;
+}
+
+body.darkmode button.small.success .btnContent {
+  color: #fff;
+}
+body.darkmode button.small.success img {
+  filter: invert(1) !important;
+}
+button.small.success:hover{
+  background-color: #6bcea7 !important;
+}
+button.success {
+  background-color: #518E76 !important;
+}
+button.success:hover {
+  background-color: #467e68 !important;
+}
+body.darkmode button.success{
+  background-color: #518E76 !important;
+}
+body.darkmode button.success:hover{
+  background-color: #5fab8d !important;
+}
+button.success img{
+  filter: invert(97%) sepia(78%) saturate(302%) hue-rotate(69deg) brightness(102%) contrast(104%) !important;
+}
+button.btn_gray{
+  background-color: var(--button-gray-bg);
+  border: none;
+  color: var(--button-bg);
+}
+body.darkmode button.btn_gray{
+  background-color: var(--dm-button-gray-bg) !important;
+  border: none;
+  color: #fff;
+}
+button.btn_gray:hover{
+  background-color: var(--button-gray-bg-hover);
+}
+body.darkmode button.btn_gray:hover{
+  background-color: var(--dm-button-gray-bg-hover) !important;
+}
+button.btn_gray::after,
+button.btn_gray img{
+  filter: var(--button-small-img-filter);
+}
+
+body.darkmode button.btn_gray::after,
+body.darkmode button.btn_gray img{
+  filter: var(--dm-button-small-img-filter) !important;
+}
+button.btn_light_brown{
+  background-color: #b4a6a6;
+  border: none;
+  color: #fff;
+}
+body.darkmode button.btn_light_brown{
+  background-color: #403939;
+}
+button.btn_light_brown img{
+  filter: invert(1);
+}
+button.btn_light_blue{
+  background-color: #9EAFC6;
+  border: none;
+  color: #fff;
+}
+body.darkmode button.btn_light_blue{
+  background-color: #DFEBFF;
+  color: var(--button-bg);
+}
+button.btn_light_blue img{
+  filter: invert(1);
+}
+button.btn_green{
+  background-color: #4d886b;
+  border: none;
+  color: #fff;
+}
+body.darkmode button.btn_green{
+  background-color: #4d886b;
+  border: none;
+  color: #fff;
+}
+button.btn_green:hover{
+  background-color: #3a6f55;
+}
+body.darkmode button.btn_green:hover{
+  background-color: #5ba380;
+}
+button.btn_green img{
+  filter: invert(1);
+}
+button.btn_orange{
+  background-color: #C65959;
+  border: none;
+  color: #fff;
+}
+button.btn_red{
+  background-color: #C65959;
+  border: none;
+  color: #fff;
+}
+button.small.btn_red{
+  background-color: #f1e1e1;
+}
+button.small.btn_red:hover{
+  background-color: #e6cece;
+}
+body.darkmode button.small.btn_red{
+  background-color: #854040 !important;
+}
+body.darkmode button.small.btn_red:hover{
+  background-color: #a14a4a !important;
+}
+body.darkmode button.small.btn_red .btnContent,
+body.darkmode button.tiny.btn_red .btnContent{
+  filter: invert(0) !important;
+}
+body.darkmode button.btn_red{
+  background-color: #C65959 !important;
+  border: none;
+  color: #fff;
+}
+button.btn_red:hover{
+  background-color: #ac4747;
+}
+body.darkmode button.btn_red:hover{
+  background-color: #f36565 !important;
+}
+button.btn_red img{
+  filter: invert(1);
+}
+button.tiny.btn_red,
+body.darkmode button.tiny.btn_red{
+  opacity: 0.8;
+  background-color: transparent !important;
+}
+button.tiny.btn_red:hover,
+body.darkmode button.tiny.btn_red:hover{
+  opacity: 1;
+  background-color: transparent !important;
+}
+button.small.btn_red .btnContent,
+button.tiny.btn_red .btnContent{
+  filter: invert(51%) sepia(46%) saturate(634%) hue-rotate(314deg) brightness(79%) contrast(94%) !important;
+}
+body.darkmode button.tiny.btn_red .btnContent{
+  filter: invert(46%) sepia(71%) saturate(828%) hue-rotate(318deg) brightness(119%) contrast(110%) !important;
+}
+button .progressBar{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: inherit;
+  width: 0%;
+  background-color: #518e76;
+  overflow: hidden;
+  transition: 300ms !important;
+  pointer-events: none;
+  z-index: 1;
+}
+button .btnContent{
+  display: flex;
+  flex-direction: row;
+  min-height: 24px;
+  min-width: 24px;
+  width: fit-content;
+  align-items: center;
+  pointer-events: none;
+  text-decoration: none !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+  gap: 8px;
+}
+.searchButtons{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  width: fit-content;
+  margin-right: 8px;
+  right: 0;
+  gap: 10px;
+}
+.btn_send_message{
+  position: absolute !important;
+  height: 50px !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+  border: none !important;
+  width: 40px;
+  bottom: 1px;
+  right: 1px;
+}
+body.darkmode .btn_send_message{
+  background-color: var(--box-input-bg) !important;
+}
+.btn_send_message img{
+  filter: invert(0);
+}
+body.darkmode .btn_send_message img{
+  filter: invert(1);
+}
+.btn_send_message:active{
+  scale: 0.95;
+}
+body.darkmode #chat_message .input_buttons{
+  background-color: var(--box-input-bg);
+}
+
+/* quando spinner ativo, esconde TODO o conteúdo menos o próprio spinner */
+.btnContent.spinner-mode > *:not(.spinner-overlay) {
+  visibility: hidden;
+}
+
+/* spinner sobreposto no centro, sem afetar layout */
+.spinner-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }

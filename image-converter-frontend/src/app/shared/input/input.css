@@ -1,0 +1,147 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+
+.form-item {
+  position: relative;
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid var(--box-border-light, #ccc);
+  border-radius: var(--default-border-radius, 6px);
+  background: transparent;
+  padding: 0 12px;
+  height: 44px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-item:focus {
+  border-color: var(--box-border-selected, #99b0d4);
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #888;
+  pointer-events: none;
+  transition: top 0.15s, font-size 0.15s, color 0.15s;
+  background: transparent;
+  padding: 0 4px;
+}
+
+label.active,
+label.centered.active {
+  top: 0;
+  font-size: 11px;
+  background: var(--body-bg-light, #fff);
+}
+
+/* Botão de olho da senha */
+.visibility {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url('/assets/icons/visibility.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.6;
+}
+
+.visibility:hover {
+  opacity: 1;
+}
+
+/* Ícone à esquerda */
+.inputIcon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.inputIcon .icon {
+  width: 100%;
+  height: 100%;
+  background-size: 24px 24px !important;
+  background-position: center !important;
+}
+
+/* Botões de ação dentro do input (search / message) */
+.input_buttons {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 2px;
+}
+
+/* Loading (multiValue) */
+.loadingList {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: var(--button-bg, #274C89);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Sugestões (autocomplete) */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--box-border-light, #ccc);
+  border-radius: var(--default-border-radius, 6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: none;
+}
+
+.suggestions3:not(:empty) {
+  display: block;
+}
+
+/* Dark mode */
+body.darkmode .form-item {
+  border-color: var(--box-input-border, #445676);
+  background: var(--box-input-bg, #29384f);
+  color: #fff;
+}
+
+body.darkmode label {
+  color: #aab5c9;
+}
+
+body.darkmode label.active {
+  background: var(--box-input-bg, #29384f);
+}
+
+body.darkmode .suggestions3 {
+  background: var(--box-bg, #243145);
+  border-color: var(--box-input-border, #445676);
+}

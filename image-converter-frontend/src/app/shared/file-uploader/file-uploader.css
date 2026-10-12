@@ -1,0 +1,425 @@
+.uploader {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 64px;
+  transition: height 200ms !important;
+  border: 1px solid var(--box-border-light);
+  border-radius: var(--default-border-radius);
+  overflow: hidden;
+  column-gap: 16px;
+  row-gap: 16px;
+  z-index: 2;
+}
+body.darkmode .uploader{
+  border: 1px solid var(--box-input-border);
+}
+.uploader.open{
+  height: 420px !important;
+}
+.modal .uploader input{
+  pointer-events: none !important;
+  cursor: default;
+}
+.modal.open .uploader input{
+  pointer-events: all !important;
+  border-radius: var(--default-border-radius);
+  cursor: pointer;
+}
+.uploader .uploaderBox {
+  position: relative;
+  display: flex;
+  min-height: 64px;
+  width: 100%;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.uploader .uploaderBox label,
+.uploader .attachmentType p {
+  font-size: 14px;
+  pointer-events: none;
+  color: var(--button-bg);
+}
+body.darkmode .uploader .uploaderBox label,
+body.darkmode .uploader .attachmentType p {
+  color: #fff;
+}
+.uploader .uploaderBox label {
+  margin: 0 0 0 calc(44px + 20px);
+}
+.uploader .attachmentType p {
+  max-width: calc(100% - 16px - 156px - 16px);
+  margin: 0 0 0 64px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+body.darkmode .uploader .attachmentType p{
+  color: #fff;
+}
+.uploader #attachment1,
+.uploader #attachment2{
+  height: 100%;
+  width: 100%;
+}
+.uploader .imgContainer {
+  position: relative;
+  height: 100%;
+  min-height: 64px;
+  width: 100%;
+  background-color: var(--uploader-container-bg);
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  
+  transition: 0s;
+  display: flex;
+}
+.uploader .imgContainer::after {
+  position: absolute;
+  content: '';
+  height: 44px;
+  width: 44px;
+  left: 10px;
+  background: url("/assets/icons/upload_file_FILL.svg");
+  background-size: 44px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(20%) sepia(98%) saturate(902%) hue-rotate(193deg) brightness(97%) contrast(87%);
+  opacity: 1;
+  z-index: 1;
+}
+body.darkmode .uploader .imgContainer::after {
+  filter: invert(88%) sepia(19%) saturate(1148%) hue-rotate(181deg) brightness(100%) contrast(108%);
+  opacity: 0.32;
+}
+body.darkmode .uploader .imgContainer {
+  background-color: var(--dm-uploader-container-bg) !important;
+}
+body.darkmode .uploader .imgContainer:hover {
+  background-color: var(--dm-uploader-container-bg-hover) !important;
+}
+.uploader .imgContainer img{
+  filter: invert(1);
+  height: 100%;
+  width: auto;
+}
+.uploader .attachmentType.notFound {
+  background-color: #FBEEEE;
+}
+body.darkmode .uploader .attachmentType.notFound {
+  background-color: #33252d;
+}
+.uploader .attachmentType.notFound p{
+  color: #c52929;
+  margin: 0;
+}
+body.darkmode .uploader .attachmentType.notFound p{
+  color: #ff7572;
+  margin: 0;
+}
+.uploader .attachmentType.notFound .imageIcon{
+  border: none;
+  background: url("/assets/icons/unknown_document.svg");
+  background-size: 44px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: invert(18%) sepia(81%) saturate(2373%) hue-rotate(344deg) brightness(108%) contrast(94%);
+  background-size: 52px;
+  opacity: 0.2;
+}
+body.darkmode .uploader .attachmentType.notFound .imageIcon{
+  filter: invert(55%) sepia(18%) saturate(7446%) hue-rotate(324deg) brightness(123%) contrast(108%);
+}
+.uploader .attachmentType.image {
+  background-color: var(--body-bg-secondary-light-opacity);
+}
+body.darkmode .uploader .attachmentType.image {
+  background-color: var(--body-bg-secondary-opacity);
+}
+body.darkmode .uploader .attachmentType.file p {
+  color:#CAE4FF;
+}
+.uploader .attachmentType.video {
+  background-color: #F0F8F1;
+}
+body.darkmode .uploader .attachmentType.video {
+  background-color: #1F3432;
+}
+.uploader .attachmentType.video::after {
+  background-image: url("/assets/icons/play_circle.svg");
+  filter: invert(57%) sepia(10%) saturate(3112%) hue-rotate(78deg) brightness(101%) contrast(66%);
+}
+.uploader .attachmentType.file {
+  background-color: #EFF1F3;
+}
+body.darkmode .uploader .attachmentType.file {
+  background-color: #26313b;
+}
+.uploader .attachmentType.file::after {
+  background-image: url("/assets/icons/file_present.svg");
+  filter: invert(29%) sepia(5%) saturate(6630%) hue-rotate(169deg) brightness(66%) contrast(73%);
+}
+body.darkmode .uploader .attachmentType.file::after {
+  filter: invert(88%) sepia(19%) saturate(1148%) hue-rotate(181deg) brightness(100%) contrast(108%);
+}
+.uploader .attachmentType.certificado {
+  background-color: #EFF1F3;
+}
+body.darkmode .uploader .attachmentType.certificado {
+  background-color: #253349;
+}
+.uploader .attachmentType.certificado::after {
+  background-image: url("/assets/icons/verified.svg");
+  filter: invert(29%) sepia(5%) saturate(6630%) hue-rotate(169deg) brightness(66%) contrast(73%);
+}
+body.darkmode .uploader .attachmentType.certificado::after {
+  filter: invert(88%) sepia(19%) saturate(1148%) hue-rotate(181deg) brightness(100%) contrast(108%);
+}
+.uploader .attachmentType.pdf {
+  background-color: #FBEEEE;
+}
+body.darkmode .uploader .attachmentType.pdf {
+  background-color: #2F242D;
+}
+.uploader .attachmentType.pdf::after {
+  background-image: url("/assets/icons/picture_as_pdf_FILL.svg");
+  filter: invert(18%) sepia(81%) saturate(2373%) hue-rotate(344deg) brightness(108%) contrast(94%);
+}
+body.darkmode .uploader .attachmentType.pdf::after {
+  filter: invert(58%) sepia(19%) saturate(4177%) hue-rotate(319deg) brightness(110%) contrast(100%);
+}
+.uploader .attachmentType.CDR {
+  background-color: #EFF7F0;
+}
+body.darkmode .uploader .attachmentType.CDR {
+  background-color: #1F3431;
+}
+.uploader .attachmentType.CDR::after {
+  background-image: url("/assets/icons/file_cdr.svg");
+  filter: invert(48%) sepia(10%) saturate(2641%) hue-rotate(73deg) brightness(111%) contrast(83%);
+}
+.uploader .attachmentType.AI {
+  background-color: #FAF4EB;
+}
+body.darkmode .uploader .attachmentType.AI {
+  background-color: #2F2F2B;
+}
+.uploader .attachmentType.AI::after {
+  background-image: url("/assets/icons/file_ai.svg");
+  filter: invert(52%) sepia(27%) saturate(1360%) hue-rotate(356deg) brightness(97%) contrast(88%);
+}
+.uploader .attachmentType p{
+  margin-left: 68px;
+}
+.uploader .attachmentType.image p{
+  margin-left: 16px;
+}
+.uploader .attachmentType {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  min-height: 64px;
+  width: inherit;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-position: 10px center;
+  background-size: 44px;
+  background-repeat: no-repeat;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  z-index: 2;
+}
+.uploader .attachmentType::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 44px;
+  left: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 44px;
+}
+.uploader .imgContainer:hover {
+  background-color: var(--uploader-container-bg-hover);
+}
+body.darkmode .uploader .imgContainer:hover {
+  background-color: var(--dm-uploader-container-bg-hover);
+}
+.uploader .imgContainer .options {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0);
+  gap: 8px;
+  opacity: 0;
+}
+.uploader .imgContainer .options button {
+  width: 44px;
+  padding: 10px;
+  align-self: center !important;
+}
+.uploader .imgContainer .options button img {
+  position: unset;
+  display: block;
+  height: 24px;
+  width: 24px;
+  margin: 0 !important;
+}
+.uploader .imgContainer:hover .options {
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+.uploader input[type="file"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.uploader .imgContainer img {
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+.uploader .imageIcon{
+  height: 64px;
+  width: 64px;
+  border-right: 1px solid var(--box-border-light);
+  background-color: #4d4d4d;
+  background-color: #fff;
+  transition: width 200ms, height 200ms, opacity 200ms !important;
+  background: url('/assets/icons/unknown_document.svg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 2;
+}
+.uploader.open .imageIcon{
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+.uploader.open .attachmentType p{
+  opacity: 0;
+}
+body.darkmode .uploader .imageIcon{
+  border-right: 1px solid var(--box-input-border);
+}
+.uploader .buttonRow{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  height: 100% !important;
+  width: auto !important;
+  margin-top: 0 !important;
+  right: 3px;
+  top: 3px;
+  pointer-events: all;
+  z-index: 3;
+}
+.uploader .buttonRow button{
+  justify-content: center;
+  height: 43px !important;
+  width: 43px !important;
+  padding: 0;
+  border-radius: 0px !important;
+  background-color: transparent;
+  border: none;
+}
+.uploader .buttonRow button:hover{
+  background-color: rgba(0, 0, 0, 0.044);
+}
+body.darkmode .uploader .buttonRow button:hover{
+  background-color: rgba(255, 255, 255, 0.16);
+}
+.uploader .attachmentType.notFound .buttonRow button img{
+  filter: invert(18%) sepia(81%) saturate(2373%) hue-rotate(344deg) brightness(108%) contrast(94%);
+}
+.uploader .uploaderBox .editButtons{
+  display: flex;
+  background-color: #fff;
+  border: 1px solid var(--box-border-light);
+  border-radius: var(--default-border-radius);
+  overflow: hidden;
+}
+body.darkmode .uploader .uploaderBox .editButtons{
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid #0000003d;
+}
+.uploader a{
+  border-bottom: none !important;
+}
+.uploader .uploaderBox .editButtons button img{
+  filter: invert(0);
+  pointer-events: none;
+}
+body.darkmode .uploader .uploaderBox .editButtons button img{
+  filter: invert(1);
+}
+.uploader .uploaderBox .modal{
+  position: absolute;
+  top: unset;
+  left: unset;
+  bottom: unset;
+  right: unset;
+  padding: 0px;
+}
+.uploader .uploaderBox .modal .modal-window{
+  padding: 0px !important;
+  margin: 0px !important;
+  max-width: 100% !important;
+}
+.uploader .uploaderBox .modal .modal-window .title{
+  display: none;
+  pointer-events: none;
+}
+.uploader .uploaderBox .modal .modal-window .modal-content{
+  flex-direction: row;
+}
+
+.modal_delete_file{
+  position: absolute;
+  background-color: rgba(198,89,89,1);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal_delete_file.open{
+  opacity: 1;
+  pointer-events: all;
+  z-index: 3;
+}
+.modal_delete_file .buttonRow{
+  top: 0 !important;
+}
+.modal_delete_file p{
+  text-align: left !important;
+  font-size: 13px;
+  padding-left: 16px;
+  padding-right: calc(90px + 16px + 16px);
+  color: #fff;
+}
+
+@media only all and (max-width: 420px) {
+  form .uploader {
+    flex-direction: column;
+  }
+}

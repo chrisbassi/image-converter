@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g>
+      <rect class="cls-2" width="24" height="24"/>
+      <g>
+        <path class="cls-3" d="M2.15,13.23h1.29l1.1-6.31c.09-.53.55-.92,1.09-.92h12.47c.54,0,1,.39,1.09.91l1.12,6.31h1.29"/>
+        <path class="cls-1" d="M18.11,20.96H5.65c-.78,0-1.45-.56-1.58-1.33l-1.04-5.9h-.87c-.28,0-.5-.22-.5-.5s.22-.5.5-.5h19.45c.28,0,.5.22.5.5s-.22.5-.5.5h-.87l-1.03,5.89c-.14.77-.8,1.33-1.58,1.33Z"/>
+        <line class="cls-3" x1="12" y1="11.15" x2="12" y2="8.01"/>
+        <line class="cls-3" x1="8.41" y1="11.15" x2="8.41" y2="8.01"/>
+        <line class="cls-3" x1="15.59" y1="11.15" x2="15.59" y2="8.01"/>
+        <path class="cls-3" d="M9.56,6.01v-1.55c0-.5.41-.91.91-.91h2.84c.5,0,.91.41.91.91v1.55"/>
+      </g>
+    </g>
+  </g>
+</svg>

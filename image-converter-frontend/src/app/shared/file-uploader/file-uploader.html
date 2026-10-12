@@ -1,0 +1,80 @@
+<div class="uploader">
+  <div class="uploaderBox">
+
+    <div class="imgContainer"
+         [style.background]="isImage && previewUrl ? 'url(' + previewUrl + ') no-repeat center / cover' : null"
+         [style.backgroundImage]="isImage && !previewUrl && uploadedFile?.thumbUrl ? 'url(' + uploadedFile!.thumbUrl + ')' : null">
+
+      <input #fileInput
+             type="file"
+             [attr.accept]="accept"
+             [required]="required && !uploadedFile && !selectedFile"
+             [disabled]="!!uploadedFile && !selectedFile"
+             (change)="onFileSelected($event)">
+
+      <div class="attachmentType notFound" *ngIf="fileKind === 'notFound'">
+        <div class="imageIcon"></div>
+        <p>Arquivo não encontrado</p>
+      </div>
+
+      <ng-container *ngIf="fileKind !== 'notFound' && (uploadedFile || selectedFile)">
+        <div class="attachmentType" [ngClass]="fileKind">
+          <div class="imageIcon"
+               *ngIf="fileKind === 'image'"
+               [style.backgroundImage]="'url(' + (previewUrl || uploadedFile?.thumbUrl) + ')'"
+               [style.backgroundSize]="'cover'"
+               [style.backgroundPosition]="'center'"></div>
+          <p>{{ title }} ( {{ humanSize }} )</p>
+        </div>
+      </ng-container>
+
+      <label *ngIf="!uploadedFile && !selectedFile && fileKind !== 'notFound'">
+        {{ title }} <span *ngIf="maxSize">( {{ maxSize }}MB )</span>
+      </label>
+    </div>
+
+    <!-- ===== Botões de ação ===== -->
+    <div class="buttonRow" *ngIf="uploadedFile || selectedFile">
+      <div class="editButtons">
+
+        <!-- Deletar / Desmarcar -->
+        <app-button
+          *ngIf="editable || !!selectedFile"
+          icon="delete_forever"
+          classes="btn_red"
+          size="44px"
+          type="button"
+          [centered]="true"
+          (clicked)="openDeleteModal()">
+        </app-button>
+      </div>
+    </div>
+
+    <!-- ===== Modal de confirmação ===== -->
+    <div class="modal_delete_file" [class.open]="isModalDeleteOpen">
+      <p>Remover Arquivo ({{ fileName }})?</p>
+      <div class="buttonRow">
+        <div class="editButtons">
+
+          <app-button
+            icon="delete_forever"
+            classes="btnIcon"
+            size="44px"
+            type="button"
+            [centered]="true"
+            (clicked)="confirmDelete()">
+          </app-button>
+
+          <app-button
+            icon="close"
+            classes="btnIcon"
+            size="44px"
+            type="button"
+            [centered]="true"
+            (clicked)="closeDeleteModal()">
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

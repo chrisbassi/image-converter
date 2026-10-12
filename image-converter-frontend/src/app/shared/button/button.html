@@ -1,0 +1,32 @@
+<button
+  [type]="type"
+  [attr.id]="id"
+  [attr.name]="id"
+  [ngClass]="classes"
+  [class.btnArrow]="arrow"
+  [ngStyle]="buttonStyles"
+  (click)="onClick($event)">
+
+  <div class="progressBar" *ngIf="loading"></div>
+
+  <div class="btnContent" [ngStyle]="contentStyles" [class.spinner-mode]="spinnerActive">
+    <img
+      *ngIf="icon && iconSrc"
+      class="btn-icon"
+      [src]="iconSrc"
+      [ngStyle]="iconStyles"
+      (error)="onIconError()"
+      alt="" />
+    <span *ngIf="label">{{ label }}</span>
+    <ng-content></ng-content>
+
+    <!-- 👇 spinner sobreposto -->
+    <img
+      *ngIf="spinnerActive"
+      class="spin spinner-overlay"
+      src="/assets/icons/progress_activity.svg"
+      alt="" />
+  </div>
+
+  <div class="counter" *ngIf="hasCounter">{{ counterText }}</div>
+</button>

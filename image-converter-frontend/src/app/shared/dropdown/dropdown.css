@@ -1,0 +1,179 @@
+/* ============================ WRAPPER (.form-dropdown) ==================== */
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: fit-content;
+  border-radius: var(--default-border-radius);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================================ SELECT ================================= */
+:host select {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: none;
+  border: 1px solid var(--box-border-light, #ccc);
+  border-radius: var(--default-border-radius, 6px);
+  background-color: var(--box-input-bg-light);
+  box-shadow: var(--input-box-shadow-light);
+  color: #444444;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  -webkit-appearance: none;
+  appearance: none;
+  caret-color: auto;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+:host select option {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+:host(:hover) select {
+  cursor: pointer;
+  box-shadow: var(--default-box-shadow);
+}
+
+:host select:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+:host:active select {
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Dark mode */
+:host-context(body.darkmode) select {
+  color: #ffffff;
+  background-color: var(--box-input-bg);
+  backdrop-filter: blur(16px);
+}
+
+:host-context(body.darkmode) select option {
+  background-color: #1c1c1c;
+}
+
+/* ================================= LABEL ================================= */
+
+:host label {
+  position: absolute;
+  top: -7px;
+  left: 0;
+  max-width: fit-content;
+  margin: 0 6px;
+  padding: 0 10px;
+  border-radius: 16px;
+  color: #1c1c1c;
+  background-color: var(--body-bg-light);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+:host label.centered {
+  left: 50% !important;
+  margin: 0 !important;
+  width: fit-content;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+
+:host-context(body.darkmode) label {
+  color: #ffffff;
+  background: var(--body-bg);
+}
+
+/* ============================ SETA (::after) ============================= */
+:host::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 24px;
+  width: 24px;
+  background-image: url('/assets/icons/keyboard_arrow_down.svg');
+  background-color: var(--box-input-bg-light);
+  background-size: contain;
+  opacity: 0.85;
+  transition: all 0.16s;
+  pointer-events: none;
+}
+
+:host(.multiValue)::after {
+  right: calc(28px + 8px);
+}
+
+:host:active::after {
+  transform: rotate(180deg);
+}
+
+:host-context(body.darkmode)::after {
+  filter: invert(1);
+  background-color: transparent;
+}
+
+/* ============================== ÍCONE ESQUERDO =========================== */
+.dropdownIcon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  height: 24px;
+  aspect-ratio: 1 / 1;
+  opacity: 0.64;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+:host-context(body.darkmode) .dropdownIcon {
+  filter: invert(1);
+}
+
+/* ================================ MULTIVALUE ============================= */
+:host .options {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+:host .valueList {
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.addValueBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.addValueBtn img {
+  height: 24px;
+  width: 24px;
+  opacity: 0.72;
+}

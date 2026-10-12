@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scrolling-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/backgrounds/bg.jpg');
+  background-repeat: repeat;
+  background-size: 1720px;
+  mix-blend-mode: multiply;
+  opacity: 0.092;
+  transition: background-image 0.64s;
+}
+
+:host-context(body.darkmode) .scrolling-bg {
+  opacity: 0.28;
+}

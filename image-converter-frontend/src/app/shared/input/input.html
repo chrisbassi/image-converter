@@ -1,0 +1,161 @@
+<div [id]="containerId" [ngClass]="containerClasses" [ngStyle]="containerStyles">
+
+  <!-- ===== Campos com input nativo ===== -->
+  <ng-container *ngIf="isRealInput">
+    <span *ngIf="type === 'password'">
+      <input
+        [type]="inputType"
+        class="form-item"
+        [ngClass]="classes"
+        [attr.name]="name"
+        [value]="value"
+        [id]="inputId"
+        [ngStyle]="inputStyles"
+        [attr.data-mask]="datamask"
+        [attr.data-suggestions3]="suggestions ? 'true' : null"
+        [attr.data-searchFile]="suggestions && file ? file : null"
+        [attr.data-multi-value]="multiValue !== null ? '' : null"
+        [required]="required"
+        [disabled]="disabled"
+        [readOnly]="readOnly"
+        (input)="onInput($event)">
+
+      <label
+        [for]="inputId"
+        [ngStyle]="labelStyles"
+        [ngClass]="labelClasses">
+        {{ displayLabel }}
+      </label>
+
+      <i class="visibility" [id]="'toggle_' + id" (click)="togglePassword()"></i>
+    </span>
+
+    <ng-container *ngIf="type !== 'password'">
+      <input
+        [type]="inputType"
+        class="form-item"
+        [ngClass]="classes"
+        [attr.name]="name"
+        [value]="value"
+        [id]="inputId"
+        [ngStyle]="inputStyles"
+        [attr.data-mask]="datamask"
+        [attr.data-suggestions3]="suggestions ? 'true' : null"
+        [attr.data-searchFile]="suggestions && file ? file : null"
+        [attr.data-multi-value]="multiValue !== null ? '' : null"
+        [required]="required"
+        [disabled]="disabled"
+        [readOnly]="readOnly"
+        (input)="onInput($event)">
+
+      <label
+        [for]="inputId"
+        [ngStyle]="labelStyles"
+        [ngClass]="labelClasses">
+        {{ displayLabel }}
+      </label>
+    </ng-container>
+  </ng-container>
+
+  <!-- ===== Textarea ===== -->
+  <ng-container *ngIf="isTextarea">
+    <textarea
+      class="form-item"
+      [ngClass]="classes"
+      [attr.name]="name"
+      [id]="inputId"
+      [ngStyle]="inputStyles"
+      [required]="required"
+      [disabled]="disabled"
+      [readOnly]="readOnly"
+      (input)="onInput($event)">{{ value }}</textarea>
+
+    <label
+      [for]="inputId"
+      [ngStyle]="labelStyles"
+      [ngClass]="labelClasses">
+      {{ displayLabel }}
+    </label>
+  </ng-container>
+
+  <!-- ===== Loading (multiValue) ===== -->
+  <div class="loadingList spin" *ngIf="multiValue !== null"></div>
+
+  <!-- ===== Botões de ação (search) ===== -->
+  <div class="input_buttons" *ngIf="type === 'search'">
+    <app-button
+      classes="icon btn_transparent"
+      size="32px"
+      icon="filter_alt"
+      [id]="'btn_' + id + '_filter'"
+      type="button"
+      (clicked)="filterClick.emit()">
+    </app-button>
+
+    <app-button
+      classes="icon btn_transparent"
+      size="32px"
+      icon="refresh"
+      [id]="'btn_refresh_search'"
+      type="button"
+      (clicked)="refreshClick.emit()">
+    </app-button>
+
+    <app-button
+      classes="icon btn_transparent"
+      size="32px"
+      icon="clear_all"
+      [id]="'btn_' + id + '_clear'"
+      type="button"
+      (clicked)="clearClick.emit()">
+    </app-button>
+  </div>
+
+  <!-- ===== Botões de ação (message) ===== -->
+  <div class="input_buttons" *ngIf="type === 'message'">
+    <app-button
+      classes="icon btn_transparent"
+      size="32px"
+      icon="refresh"
+      id="btn_refresh_chat"
+      type="button"
+      (clicked)="refreshClick.emit()">
+    </app-button>
+
+    <app-button
+      classes="icon btn_transparent btn_input_attachment"
+      size="32px"
+      icon="upload"
+      [id]="'btn_' + id + '_attachment'"
+      type="button"
+      (clicked)="attachClick.emit()">
+    </app-button>
+
+    <app-button
+      classes="icon btn_transparent btn_input_screencast"
+      size="32px"
+      icon="screen_record"
+      [id]="'btn_' + id + '_screencast'"
+      type="button"
+      (clicked)="screencastClick.emit()">
+    </app-button>
+  </div>
+
+  <!-- ===== Hidden input (para envio em forms tradicionais) ===== -->
+  <input
+    type="hidden"
+    [id]="hiddenInputId"
+    class="hiddenInput"
+    [attr.name]="hiddenName"
+    [value]="value">
+
+  <!-- ===== Ícone à esquerda ===== -->
+  <div class="inputIcon" *ngIf="icon">
+    <div class="icon" [style.background]="'url(' + iconUrl + ') no-repeat'"></div>
+  </div>
+
+  <!-- ===== Sugestões (autocomplete) ===== -->
+  <div class="suggestions" data-scroll *ngIf="suggestions">
+    <div class="suggestionsContainer3"></div>
+  </div>
+</div>

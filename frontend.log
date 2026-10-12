@@ -1,0 +1,124 @@
+npm notice run image-converter-frontend@0.0.0 start
+npm notice run ng serve
+❯ Building...
+✔ Building...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 171.11 kB | 
+styles.css           | styles           |   3.46 kB | 
+
+                     | Initial total    | 174.56 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 172.32 kB | 
+server.mjs           | server           |   1.86 kB | 
+polyfills.server.mjs | polyfills.server | 268 bytes | 
+
+Application bundle generation complete. [5.501 seconds] - 2026-10-12T18:29:34.735Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+ERROR ReferenceError: requestAnimationFrame is not defined
+    at _ScrollingBg.scrollBackground (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:50:5)
+    at Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:30:12)
+    at NoopNgZone.runOutsideAngular (/node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs:2670:12)
+    at _ScrollingBg.Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:28:17)
+    at callHookInternal (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:262:10)
+    at callHook (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:277:7)
+    at callHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:251:9)
+    at executeInitAndCheckHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:220:5)
+    at refreshView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6109:11)
+    at detectChangesInView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6192:5)
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        | 172.21 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+main.server.mjs     | main.server | 173.43 kB | 
+
+Application bundle generation complete. [0.307 seconds] - 2026-10-12T18:35:17.864Z
+
+15:35:19 [vite] (ssr) [optimizer] bundling dependencies...
+15:35:19 [vite] (ssr) dependency optimized: rxjs
+15:35:19 [vite] (ssr) optimized dependencies changed. reloading
+15:35:19 [vite] (ssr) Error when evaluating SSR module /main.server.mjs?timestamp=1791830117869: There is a new version of the pre-bundle for "/var/www/imgconverter/image-converter-frontend/.angular/cache/22.1.7/image-converter-frontend/vite/deps_ssr/@angular_core.js?v=cd33c275", a page reload is going to ask for it.
+      at throwOutdatedRequest (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:5202:30)
+      at LoadPluginContext.load (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:5168:118)
+      at EnvironmentPluginContainer.load (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:30159:56)
+      at loadAndTransform (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:20077:43)
+      at doTransform (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:20045:17)
+      at async fetchModule (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:33584:15)
+      at async handleInvoke (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:26274:21)
+      at async EventEmitter.listenerForInvokeHandler (file:///var/www/imgconverter/image-converter-frontend/node_modules/vite/dist/node/chunks/node.js:26329:13)
+Page reload sent to client(s).
+ERROR ReferenceError: requestAnimationFrame is not defined
+    at _ScrollingBg.scrollBackground (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:50:5)
+    at Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:30:12)
+    at NoopNgZone.runOutsideAngular (/node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs:2670:12)
+    at _ScrollingBg.Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:28:17)
+    at callHookInternal (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:262:10)
+    at callHook (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:277:7)
+    at callHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:251:9)
+    at executeInitAndCheckHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:220:5)
+    at refreshView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6109:11)
+    at detectChangesInView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6192:5)
+15:35:21 [vite] (client) dependency optimized: rxjs
+15:35:21 [vite] (client) optimized dependencies changed. reloading
+ERROR ReferenceError: requestAnimationFrame is not defined
+    at _ScrollingBg.scrollBackground (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:50:5)
+    at Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:30:12)
+    at NoopNgZone.runOutsideAngular (/node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs:2670:12)
+    at _ScrollingBg.Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:28:17)
+    at callHookInternal (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:262:10)
+    at callHook (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:277:7)
+    at callHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:251:9)
+    at executeInitAndCheckHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:220:5)
+    at refreshView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6109:11)
+    at detectChangesInView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6192:5)
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+main.js              | main             | 172.21 kB | 
+styles.css           | styles           |   3.46 kB | 
+
+                     | Initial total    | 175.67 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+main.server.mjs      | main.server      | 173.43 kB | 
+server.mjs           | server           |   1.86 kB | 
+polyfills.server.mjs | polyfills.server | 268 bytes | 
+
+Application bundle generation complete. [0.075 seconds] - 2026-10-12T18:36:25.202Z
+
+ERROR ReferenceError: requestAnimationFrame is not defined
+    at _ScrollingBg.scrollBackground (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:50:5)
+    at Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:30:12)
+    at NoopNgZone.runOutsideAngular (/node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs:2670:12)
+    at _ScrollingBg.Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:28:17)
+    at callHookInternal (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:262:10)
+    at callHook (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:277:7)
+    at callHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:251:9)
+    at executeInitAndCheckHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:220:5)
+    at refreshView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6109:11)
+    at detectChangesInView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6192:5)
+ERROR ReferenceError: requestAnimationFrame is not defined
+    at _ScrollingBg.scrollBackground (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:50:5)
+    at Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:30:12)
+    at NoopNgZone.runOutsideAngular (/node_modules/@angular/core/fesm2022/_pending_tasks-chunk.mjs:2670:12)
+    at _ScrollingBg.Component (/var/www/imgconverter/image-converter-frontend/src/app/scrolling-bg/scrolling-bg.ts:28:17)
+    at callHookInternal (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:262:10)
+    at callHook (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:277:7)
+    at callHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:251:9)
+    at executeInitAndCheckHooks (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:220:5)
+    at refreshView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6109:11)
+    at detectChangesInView (/node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs:6192:5)

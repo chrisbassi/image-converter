@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  height: auto;
+  margin: 32px 0px 16px 0px;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  font-family: "Marvel", system-ui, sans-serif;
+  gap: 16px;
+}
+
+h1 {
+  color: #2b08c7;
+  font-size: 44px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: #2b08c7;
+  font-size: 24px;
+  text-align: center;
+  margin: 6px;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input[type="range"] { 
+  width: 100%;
+  margin: 0 0 12px 0;
+ }
+
+.quality-value {
+  font-weight: bold;
+  color: #667eea;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.result img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.result a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.error {
+  color: #e74c3c;
+  margin: 0px;
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.stats{
+  font-size: 20px !important;
+}
+a{
+  width: 100%;
+}

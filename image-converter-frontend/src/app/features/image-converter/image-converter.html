@@ -1,0 +1,82 @@
+<h1>Chega de Photoshop só pra converter.</h1>
+<p class="subtitle">Redimensione, comprima e mude o formato direto no navegador. Rápido. Grátis.</p>
+
+<div class="container">
+
+  <!-- Uploader -->
+  <app-file-uploader
+    title="Escolha uma imagem"
+    [maxSize]="16"
+    accept="image/gif,image/jpeg,image/png,image/webp"
+    [required]="true"
+    [editable]="true"
+    (fileSelected)="onFileSelected($event)">
+  </app-file-uploader>
+
+  <!-- Formato -->
+  <dropdown
+    label="Formato de saída"
+    [optionValues]="['jpg', 'png', 'webp', 'gif']"
+    [optionTexts]="['JPG', 'PNG', 'WEBP', 'GIF']"
+    id="format"
+    name="format"
+    size="100%"
+    [selectedValue]="selectedFormat"
+    (selectedValueChange)="selectedFormat = $event"
+  ></dropdown>
+
+  <!-- Qualidade -->
+  <label for="quality">Qualidade: <span class="quality-value">{{ quality }}%</span></label>
+  <input type="range" id="quality" min="10" max="100" step="5" [(ngModel)]="quality">
+
+  <!-- Largura e altura -->
+  <div class="row">
+    <app-input label="Largura (px)" id="maxWidth" type="number" size="100%" [(ngModel)]="maxWidth"></app-input>
+    <app-input label="Altura (px)" id="maxHeight" type="number" size="100%" [(ngModel)]="maxHeight"></app-input>
+  </div>
+
+  <!-- Rotação -->
+  <dropdown
+    label="Rotação"
+    [optionValues]="['0', '90', '180', '270']"
+    [optionTexts]="['Nenhuma', '90°', '180°', '270°']"
+    id="rotation"
+    name="rotation"
+    size="100%"
+    [selectedValue]="rotation.toString()"
+    (selectedValueChange)="rotation = +$event"
+  ></dropdown>
+
+  @if (errorMessage()) {
+    <p class="error">{{ errorMessage() }}</p>
+  }
+
+  @if (convertedImageUrl()) {
+    <div class="result">
+      <img [src]="convertedImageUrl()" alt="Imagem convertida">
+      <div class="stats">
+        <p><strong>{{ formatBytes(originalSize()) }} → {{ formatBytes(convertedSize()) }}. 🎉 Redução de {{ reductionPercentage() }}%</strong></p>
+      </div>
+      <a [href]="convertedImageUrl()" [download]="'imagem-convertida.' + selectedFormat">
+        <app-button
+          #btnDownload
+          icon="download"
+          label="Baixar imagem convertida"
+          size="100%"
+          classes="success"
+          [centered]="true">
+        </app-button>
+      </a>
+    </div>
+  }
+</div>
+
+<!-- Botão converter -->
+<app-button
+  #btnConverter
+  label="Converter"
+  size="100%"
+  [centered]="true"
+  [loading]="isLoading()"
+  (clicked)="convert()">
+</app-button>
