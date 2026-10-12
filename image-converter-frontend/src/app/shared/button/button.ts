@@ -34,7 +34,7 @@ export class Button implements OnChanges {
   ngOnChanges(): void {
     if (this.icon) {
       this.iconAttempt = 0;
-      this.iconSrc = `/image-converer/icons/${this.icon}.svg`;
+      this.iconSrc = `/image-converer/assets/icons/${this.icon}.svg`;
     } else {
       this.iconSrc = null;
     }
@@ -45,7 +45,7 @@ export class Button implements OnChanges {
     if (this.iconAttempt === 1) {
       this.iconSrc = `/image-converer/logos/${this.icon}.svg`;
     } else if (this.iconAttempt === 2) {
-      this.iconSrc = `/image-converer/icons/question_mark.svg`;
+      this.iconSrc = `/image-converer/assets/icons/question_mark.svg`;
     } else {
       this.iconSrc = null;
     }
