@@ -182,6 +182,6 @@ get isRealInput(): boolean {
   }
 
   get iconUrl(): string | null {
-    return this.icon ? `assets/icons/${this.icon}.svg` : null;
+    return this.icon ? `/image-converer/icons/${this.icon}.svg` : null;
   }
 }

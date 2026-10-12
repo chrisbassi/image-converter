@@ -53,8 +53,8 @@ export class DropdownComponent implements OnChanges {
   @Input() multiValue: number | null = null;
   @Input() data: Record<string, string | number> | null = null;
 
-  /** Caminho base dos ícones (equivale a ROOT + "assets/icons/") */
-  @Input() iconsPath = 'assets/icons';
+  /** Caminho base dos ícones (equivale a ROOT + "/image-converer/icons/") */
+  @Input() iconsPath = '/image-converer/icons';
   @Input() root = '';
 
   /* -------------------------------- Outputs ------------------------------- */

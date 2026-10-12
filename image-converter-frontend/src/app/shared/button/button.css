@@ -123,7 +123,7 @@ button.btnArrow::after{
   width: 24px;
   right: 0;
   content: '';
-  background: url('assets/icons/chevron_right.svg') no-repeat;
+  background: url('/image-converer/assets/icons/chevron_right.svg') no-repeat;
   box-sizing: content-box;
   padding-right: 6px;
   opacity: 0.72;
@@ -253,7 +253,7 @@ button.back::after{
   height: 24px;
   width: 24px;
   left: 4px;
-  background-image: url('assets/icons/chevron_left.svg');
+  background-image: url('/image-converer/assets/icons/chevron_left.svg');
   background-repeat: no-repeat;
   opacity: 0.64;
 }
